@@ -16,7 +16,7 @@
 #include <utility>
 #include "../BackEnd/FinalRect.h"
 #include "../Game/BaseNode.h"
-
+#include "Camera.h"
 class Renderer {
 
 private:

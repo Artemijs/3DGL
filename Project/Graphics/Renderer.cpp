@@ -62,11 +62,7 @@ Renderer::~Renderer() {
 	glfwDestroyWindow(_window);
 	glfwTerminate();
 	delete _fRect;
-	//delete _g;
-	//edelete _testG;
-	//glDeleteFramebuffers(1, &_fbo);
-	//glDeleteTextures(1, &_fboTex);
-	//glDeleteRenderbuffers(1, _
+
 }
 
 void Renderer::CreateGeometry() {
@@ -101,103 +97,6 @@ void Renderer::CreateWindow() {
 	glEnable(GL_DEPTH_TEST);
 
 
-}
-/*
-//Sprite s = Sprite("./Assets/Textures/default.png");
-		//Game::_testG->Draw(n->GetModelMatrix());
-		_vao->Bind();
-		Shader* s = _all_shaders->at(0);
-		Texture* t = _all_textures->at(0).second;
-		s->Activate();
-		//glUseProgram(_all_shaders->at(0)->ID);
-		glUniformMatrix4fv(glGetUniformLocation(s->ID, "model"), 1, GL_TRUE, &Matrix4x4(1).buff[0]);
-		SetShaderVariables(0);
-		t->Bind();
-		t->texUni(s, "tex0", t->ID);
-
-
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
-		//glBindTexture(GL_TEXTURE_2D, tID);
-		//glUniform1i(glGetUniformLocation(_shader->ID, "tex0"), tID); //maybe this part is optioNAL
-		//Renderer::instance()->GetVAO()->Bind();
-
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		_vao->Unbind();
-		glUseProgram(0);
-		t->Unbind();
-*/
-///debug function that draws everything to _fbo with root model matrix
-void Renderer::Draw(const BaseNode* n) {
-	bool isRoot = (n->GetParent() == NULL);
-	
-	
-
-	if (isRoot) {
-		glBindFramebuffer(GL_FRAMEBUFFER, _fbo->_fbo);
-		
-		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glEnable(GL_DEPTH_TEST);
-
-
-		//Game::_testG->Draw(n->GetModelMatrix());
-		
-		//glBindTexture(GL_TEXTURE_2D, tID);
-		//glUniform1i(glGetUniformLocation(_shader->ID, "tex0"), tID); //maybe this part is optioNAL
-		//Renderer::instance()->GetVAO()->Bind();
-
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		
-		//DRAW THE FINAL SCREEN RECTANGLE
-
-
-		_fRect->Bind();
-		glDisable(GL_DEPTH_TEST);
-		glBindTexture(GL_TEXTURE_2D, _fbo->_fboTex);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		_fRect->Unbind();
-		glBindTexture(GL_TEXTURE_2D, 0);
-
-	}
-	/*bool isRoot = (n->GetParent() == NULL);
-	auto children = n->GetAllChildren();
-	auto graphic = n->GetGraphic();
-	if (isRoot) {
-		//const FBO* fbo = _fbo;
-		//const FBO* fbo = Game::_world->GetComponent<RenderNode>()->GetFBO();
-
-		glBindFramebuffer(GL_FRAMEBUFFER, _fbo->_fbo);
-
-		glClearColor(0.07f, 0.13f, 0.17f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		glEnable(GL_DEPTH_TEST);
-	}
-	
-	if (graphic != NULL) {
-		graphic->Draw(n->GetModelMatrix());
-	}
-
-	for (int i = 0; i < children->size(); ++i) {
-		auto child = children->at(i);
-		Draw(child);
-
-	}
-	if (isRoot) {
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-
-		//DRAW THE FINAL SCREEN RECTANGLE
-
-
-		_fRect->Bind();
-		glDisable(GL_DEPTH_TEST);
-		glBindTexture(GL_TEXTURE_2D, _fbo->_fboTex);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		_fRect->Unbind();
-		glBindTexture(GL_TEXTURE_2D, 0);
-
-	}*/
-	//glfwSwapBuffers(_window);
-	//glfwPollEvents();//<------------- THIS SHOULD BE IN MAIN ?
 }
 
 VAO* Renderer::GetVAO() {

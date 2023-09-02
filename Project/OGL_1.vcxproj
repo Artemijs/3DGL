@@ -162,7 +162,9 @@
     <ClCompile Include="Game\Game.cpp" />
     <ClCompile Include="Game\MouseEventComponent.cpp" />
     <ClCompile Include="Game\RenderNode.cpp" />
+    <ClCompile Include="Graphics\Camera.cpp" />
     <ClCompile Include="Graphics\Graphic.cpp" />
+    <ClCompile Include="Graphics\Materials\DiffuseMaterial.cpp" />
     <ClCompile Include="Graphics\Materials\Material.cpp" />
     <ClCompile Include="Graphics\Materials\MaterialButton.cpp" />
     <ClCompile Include="Graphics\Materials\MaterialDefault.cpp" />
@@ -203,7 +205,9 @@
     <ClInclude Include="Game\Game.h" />
     <ClInclude Include="Game\MouseEventComponent.h" />
     <ClInclude Include="Game\RenderNode.h" />
+    <ClInclude Include="Graphics\Camera.h" />
     <ClInclude Include="Graphics\Graphic.h" />
+    <ClInclude Include="Graphics\Materials\DiffuseMaterial.h" />
     <ClInclude Include="Graphics\Materials\Material.h" />
     <ClInclude Include="Graphics\Materials\MaterialButton.h" />
     <ClInclude Include="Graphics\Materials\MaterialDefault.h" />
